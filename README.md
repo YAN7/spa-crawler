@@ -7,7 +7,7 @@
 在做一个项目的过程中使用了一个开源前端框架,该开源框架的使用到的图片都是从服务器返回的,为了防止图片万一被删掉,所以需要把图片爬取到本地.
 
 ### 使用
-```
+```javascript
 git clone https://github.com/YAN7/spa-crawler.git
 npm install
 node index.js
