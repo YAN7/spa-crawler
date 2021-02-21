@@ -1,7 +1,4 @@
-const utils = require('./utils')
 const config = require('./config')
-
-const { downLoad, isExist } = utils
 
 async function login(page) {
 	await page.goto(`${config.baseUrl}/pages/public/login`)
@@ -20,14 +17,14 @@ async function login(page) {
 
 async function simulateLogin(page) {
 	await page.goto(config.baseUrl)
-    await page.waitFor(1000)
-    await page.evaluate(() => {
-        localStorage.setItem('token', 'df49b381-ed3b-4377-91b7-eb4399d8fdc2')
-    })
-    await page.goto(config.baseUrl)
+	await page.waitFor(1000)
+	await page.evaluate(() => {
+		localStorage.setItem('token', 'df49b381-ed3b-4377-91b7-eb4399d8fdc2')
+	})
+	await page.goto(config.baseUrl)
 }
 
 module.exports = {
 	login,
-	simulateLogin
+	simulateLogin,
 }
