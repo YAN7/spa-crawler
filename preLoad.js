@@ -1,7 +1,7 @@
 const config = require('./config')
 
 async function login(page) {
-	await page.goto(`${config.baseUrl}/pages/public/login`)
+	await page.goto(`${config.targetUrl}/pages/public/login`)
 	await page.waitFor('.tab-item.x-c')
 	const pwdLoginBtn = await page.$$('.tab-item.x-c')
 	await pwdLoginBtn[1].click()
@@ -16,12 +16,12 @@ async function login(page) {
 }
 
 async function simulateLogin(page) {
-	await page.goto(config.baseUrl)
+	await page.goto(config.targetUrl)
 	await page.waitFor(1000)
 	await page.evaluate(() => {
 		localStorage.setItem('token', 'df49b381-ed3b-4377-91b7-eb4399d8fdc2')
 	})
-	await page.goto(config.baseUrl)
+	await page.goto(config.targetUrl)
 }
 
 module.exports = {
